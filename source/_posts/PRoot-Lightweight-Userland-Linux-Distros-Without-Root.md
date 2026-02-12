@@ -32,7 +32,7 @@ For example:
 curl -O https://partner-images.canonical.com/core/bionic/current/ubuntu-bionic-core-cloudimg-amd64-root.tar.gz
 ```
 
-### Unpack it into a folder**
+### Unpack it into a folder
 
 For example:
 
