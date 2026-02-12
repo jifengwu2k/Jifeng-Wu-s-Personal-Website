@@ -76,7 +76,17 @@ Let's break that down:
 
 ### Use Your Distro
 
-You're now inside a minimal Ubuntu environment! You can `apt update`, install packages, build anything you want - totally isolated from your host system.
+You're now inside a minimal Ubuntu environment! 
+
+Before you do anything, you may need to set some environment variables:
+
+```sh
+export PATH=/sbin:/usr/sbin:/bin:/usr/bin:/usr/local/sbin:/usr/local/bin
+export HOME=/root
+export SHELL=/bin/bash
+```
+
+You can `apt update`, install packages, build anything you want - totally isolated from your host system.
 
 But:
 
