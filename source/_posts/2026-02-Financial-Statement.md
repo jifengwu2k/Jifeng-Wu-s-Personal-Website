@@ -18,6 +18,8 @@ date,name,amount
 2026-02-09,Payment to Chase card,-43.21
 2026-02-09,ONEPAY CASHREWRD SYF PAYMNT,-34.34
 2026-02-09,Payment to Chase card,-23.85
+2026-02-13,Cornell Universi DIR DEP PPD,1745.84
+2026-02-13,Payment to Chase card,-85.21
 ```
 
-Total: -1905.30
+Total: -244.67
