@@ -2,7 +2,9 @@
 title: Running a Rootless SSH Server on a Custom Port
 date: 2025-12-10
 categories:
-- [Environments]
+  - DevOps, SysAdmin
+tags:
+  - Reference
 ---
 
 Sometimes you need to spin up an SSH server without changing system configs or needing root. Here's how you can do it, using a custom port and a host key you generate yourself.

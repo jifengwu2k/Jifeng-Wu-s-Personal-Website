@@ -2,7 +2,9 @@
 title: Managing Development Environments with Conda
 date: 2025-07-10
 categories:
-- [Environments]
+  - DevOps, SysAdmin
+tags:
+  - Reference
 ---
 
 When juggling multiple data science or machine learning projects, maintaining isolated, reproducible environments is crucial. **conda** has emerged as the *de facto standard* in Python for managing such environments. But *why* should you use conda over alternatives like `venv`, `poetry`, `pipenv`, system package managers like `apt`, or container tools like Docker? Let's find out - and get you set up!

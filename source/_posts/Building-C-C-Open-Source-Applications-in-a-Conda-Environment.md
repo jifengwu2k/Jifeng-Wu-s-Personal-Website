@@ -2,7 +2,9 @@
 title: Building C/C++ Open Source Applications in a Conda Environment
 date: 2025-12-06
 categories:
-- [Environments]
+  - DevOps, SysAdmin
+tags:
+  - Reference
 ---
 
 Make sure you go through [Compiling C++ Code in a Conda Environment Using Conda-managed Headers and Libraries](/2025/08/24/Compiling-C-Code-in-a-Conda-Environment-Using-Conda-managed-Headers-and-Libraries/) and set up the toolchain and environment variables first.

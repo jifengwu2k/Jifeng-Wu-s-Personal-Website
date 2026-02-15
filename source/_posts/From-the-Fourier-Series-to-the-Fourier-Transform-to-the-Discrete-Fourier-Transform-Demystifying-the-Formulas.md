@@ -1,13 +1,14 @@
 ---
-title: >-
-  From the Fourier Series to the Fourier Transform to the Discrete-time
-  Fourier Transform: Demystifying the Formulas
+title: " From the Fourier Series to the Fourier Transform to the Discrete Fourier Transform: Demystifying the Formulas"
 date: 2023-09-04
-categories: 
-- [Mathematics]
+updated: 2026-02-14
+categories:
+  - Theory, Data Structures, Algorithms, Programming Languages, Design Patterns
+tags:
+  - Essays
 ---
 
-In realms as broad as electrical engineering, acoustics, optics, signal processing, quantum mechanics, and econometrics, the Fourier Series, Fourier Transform, and Discrete-time Fourier Transform play a pivotal role in analyzing signals by allowing us to decompose them into simpler components. Many articles present their formulas or dive into their intuition and applications. However, what seems to be missing is a blog post that explains the derivation of their formulas in a way that is both clear and accessible, requiring no more than a rudimentary understanding of calculus.
+In realms as broad as electrical engineering, acoustics, optics, signal processing, quantum mechanics, and econometrics, the Fourier Series, Fourier Transform, and Discrete Fourier Transform play a pivotal role in analyzing signals by allowing us to decompose them into simpler components. Many articles present their formulas or dive into their intuition and applications. However, what seems to be missing is a blog post that explains the derivation of their formulas in a way that is both clear and accessible, requiring no more than a rudimentary understanding of calculus.
 
 # Fourier Series
 
@@ -129,7 +130,7 @@ These two equations are very important.
 
 We refer to $X(f)$ as the *Fourier transform* of $x(t)$, also known as the *spectrum* of $x(t)$, and to $x(t)$ as the *inverse Fourier transform* of $X(f)$.
 
-# Discrete-time Fourier Transform
+# Discrete Fourier Transform
 
 When we process signals with computers, as computers cannot store a continuous infinite function, we usually take $N$ samples of the original signal $x(t)$ at a certain time interval $\Delta t$, obtaining an array $x[0:N-1]$.
 
@@ -145,10 +146,10 @@ Let:
 
 $$X[k] = \sum_{n=0}^{N - 1}{x[n] e^{-i 2\pi \frac{k}{N} n}} (k \in \{0, 1, \dots, N - 1\})$$
 
-We call such an array of $N$ discrete numbers $X[0:N-1]$ the *discrete-time Fourier transform* of $x[0:N-1]$, which is a *discrete* frequency domain representation of $x[0:N-1]$.
+We call such an array of $N$ discrete numbers $X[0:N-1]$ the *discrete Fourier transform* of $x[0:N-1]$, which is a *discrete* frequency domain representation of $x[0:N-1]$.
 
 Using $X[0:N-1]$, we can restore $x[0:N-1]$:
 
 $$x[n] = \frac{1}{N} \sum_{k=0}^{N - 1}{X[k] e^{i 2\pi \frac{k}{N} n}} (n \in \{0, 1, \dots, N - 1\})$$
 
-We call $x[0:N-1]$ the *inverse discrete-time Fourier transform* of $X[0:N-1]$. This is analogous to $X(f)$ being the Fourier transform of $x(t)$ and $x(t)$ being the inverse Fourier transform of $X(f)$ in the continuous case.
+We call $x[0:N-1]$ the *inverse discrete Fourier transform* of $X[0:N-1]$. This is analogous to $X(f)$ being the Fourier transform of $x(t)$ and $x(t)$ being the inverse Fourier transform of $X(f)$ in the continuous case.

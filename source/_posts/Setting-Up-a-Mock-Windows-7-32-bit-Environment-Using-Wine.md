@@ -2,7 +2,9 @@
 title: Setting Up a Mock Windows 7 32-bit Environment Using Wine
 date: 2026-01-19
 categories:
-- [Environments]
+  - DevOps, SysAdmin
+tags:
+  - Reference
 ---
 
 Setting up a mock Windows 7 32-bit environment using Wine is a common way to run older Windows applications on Linux/macOS. Here's a step-by-step guide.

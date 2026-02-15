@@ -2,7 +2,9 @@
 title: Setting Up a Headless VNC Server for Remote Desktop Access
 date: 2025-08-21
 categories:
-- [Environments]
+  - DevOps, SysAdmin
+tags:
+  - Reference
 ---
 
 While SSH is a staple tool and almost universally understood among Linux users, setting up **VNC for remote desktop access** - especially headlessly or with virtual framebuffers - remains mysterious to many, and for good reasons:
