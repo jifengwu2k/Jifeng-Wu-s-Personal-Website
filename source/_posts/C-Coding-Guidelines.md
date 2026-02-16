@@ -2,7 +2,9 @@
 title: C++ Coding Guidelines
 date: 2025-09-15
 categories:
-- [Reference]
+  - Theory, Data Structures, Algorithms, Programming Languages, Design Patterns
+tags:
+  - Reference
 ---
 
 ## Guiding Philosophy

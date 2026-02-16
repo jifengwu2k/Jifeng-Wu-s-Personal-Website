@@ -18,15 +18,6 @@ Utilities:
 - [**Clipboard to Markdown**](/static/utilities/clipboard-to-markdown.html)
 - [**Webcam Viewer**](/static/utilities/webcam-viewer.html)
 
-References:
-
-- [**Python Coding Guidelines**](/2025/08/29/Python-Coding-Guidelines/)
-- [**C++ Coding Guidelines**](/2025/09/15/C-Coding-Guidelines/)
-- [**Shell Coding Guidelines**](/2025/09/28/Shell-Coding-Guidelines/)
-- [**High-Frequency Git Operations for Everyday Development**](/2025/08/21/High-Frequency-Git-Operations-for-Everyday-Development/)
-- [**Building C/C++ Open Source Applications in a Conda Environment**](/2025/12/06/Building-C-C-Open-Source-Applications-in-a-Conda-Environment/)
-- [**Structural, Behavioral, and Flow Diagrams: Definitions, Examples, and Visualization Code**](2026/01/19/Structural-Behavioral-and-Flow-Diagrams-Definitions-Examples-and-Visualization-Code/)
-
 ------
 
 ## Papers and Essays

@@ -1,8 +1,10 @@
 ---
 title: Automate Your Workflow with GitHub Actions
-date: 2026-01-09 23:58:54
+date: 2026-01-09
 categories:
-- [DevOps]
+  - DevOps, SysAdmin
+tags:
+  - Reference
 ---
 
 # Automate Your Workflow with GitHub Actions

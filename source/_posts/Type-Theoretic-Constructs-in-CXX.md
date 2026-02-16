@@ -3,7 +3,9 @@ layout: blog
 title: Type-Theoretic Constructs in C++
 date: 2023-03-01
 categories:
-- ["Design Patterns"]
+  - Theory, Data Structures, Algorithms, Programming Languages, Design Patterns
+tags:
+  - Essays
 ---
 
 # Fixed-point Combinators, Tying the Recursive Knot, and Recursive Lambda Expressions

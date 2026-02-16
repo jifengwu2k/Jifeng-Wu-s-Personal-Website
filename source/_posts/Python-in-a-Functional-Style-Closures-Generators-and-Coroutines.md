@@ -3,17 +3,9 @@ layout: blog
 title: 'Python in a Functional Style: Closures, Generators, and Coroutines'
 date: 2022-10-28
 categories:
-- ["Design Patterns"]
-------
-
-<!-- _class: lead -->
-
-# Python in a Functional Style: Closures, Generators, and Coroutines
-
-Jifeng Wu
-
-2022-10-28
-
+  - Theory, Data Structures, Algorithms, Programming Languages, Design Patterns
+tags:
+  - Essays
 ------
 
 <!-- header: Contents -->

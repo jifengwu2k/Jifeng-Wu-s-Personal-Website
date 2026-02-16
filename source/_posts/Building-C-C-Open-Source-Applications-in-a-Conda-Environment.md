@@ -1,5 +1,5 @@
 ---
-title: Building C/C++ Open Source Applications in a Conda Environment
+title: Building C/C++ Applications in a Conda Environment
 date: 2025-12-06
 categories:
   - DevOps, SysAdmin
@@ -7,9 +7,77 @@ tags:
   - Reference
 ---
 
-Make sure you go through [Compiling C++ Code in a Conda Environment Using Conda-managed Headers and Libraries](/2025/08/24/Compiling-C-Code-in-a-Conda-Environment-Using-Conda-managed-Headers-and-Libraries/) and set up the toolchain and environment variables first.
+## Prerequisites
 
-## [autossh](https://github.com/Autossh/autossh)
+### Common Build Variables
+
+#### Directly Used by `gcc`/`clang`
+
+These environment variables are **automatically used by `gcc`/`clang` themselves**.
+
+- `CPATH`
+  - Colon-separated list of directories to search for headers before built-in include paths.
+  - Like passing multiple `-I` options.
+- `LIBRARY_PATH` 
+  - Colon-separated list of directories to search for libraries (`.so`/`.a`) at **link time**.
+  - Like passing multiple `-L` options.
+  - **Doesn't affect how the executable finds shared libraries when running.**
+
+#### For Build Systems (`make`, `cmake`, etc.)
+
+These environment variables are not used by compilers **unless** your build tool (`make`, `cmake`, etc.) or script expands them.
+
+- `CC` / `CXX`:
+  - Which C/C++ compiler to use.
+- `CFLAGS` / `CXXFLAGS`:
+  - Extra flags for compiling C or C++ respectively, e.g., `-O2 -g -Wall`.
+- `LDFLAGS`:
+  - Extra flags when linking, such as `-L/path/to/lib`, `-lfoo`, `-Wl,-rpath,/my/libs`.
+
+> 🚫 **Never stuff include/library/link flags inside `$CXX` or `$CC`. Always set them as separate variables, or pass them directly on the command line to the compiler.**
+
+### C++ Libraries in Conda Environments
+
+When you install a C++ library from `conda-forge`, it's placed inside your current environment, not in a system-wide directory.
+
+- Headers: `$CONDA_PREFIX/include`
+- Libraries: `$CONDA_PREFIX/lib`  
+
+> Exception: The **C runtime** (`libc.so`, `libm.so`, etc.) always comes from the system, not Conda.
+
+## Create a Conda Environment for C++ Compilation
+
+```bash
+conda install -c conda-forge clang clangxx libcxx libcxxabi libcxx-devel lld llvm-tools
+```
+
+- `libcxx`, `libcxxabi`, `libcxx-devel`: LLVM's C++ standard library and headers.
+
+### Tell the Compiler Where to Look for Headers and Libraries
+
+```bash
+export CPATH="$CONDA_PREFIX/include"
+export LIBRARY_PATH="$CONDA_PREFIX/lib"
+```
+
+This automatically adds Conda's include and lib directories to `clang`'s search paths.
+
+### Set Common Build Variables for Build Systems
+
+```bash
+export CC="clang"
+export CXX="clang++ -stdlib=libc++"
+export LDFLAGS="-Wl,-rpath,$LIBRARY_PATH"
+export AR="$CONDA_PREFIX/bin/llvm-ar"
+export RANLIB="$CONDA_PREFIX/bin/llvm-ranlib"
+export LD="$CONDA_PREFIX/bin/ld.lld"
+```
+
+- `LDFLAGS` sets an `rpath` such that the generated executable or shared library will hard-code `LIBRARY_PATH` as a shared library search path.
+
+## Compiling Open Source Applications
+
+### [autossh](https://github.com/Autossh/autossh)
 
 Install openssh:
 
@@ -26,7 +94,7 @@ cd autossh
 cd ..
 ```
 
-## [busybox](https://busybox.net/)
+### [busybox](https://busybox.net/)
 
 Note that `busybox` does not use `configure`, only `make`.
 
@@ -60,7 +128,7 @@ make \
 
 Now, the `busybox` binary is built.
 
-## [enscript](https://www.gnu.org/software/enscript)
+### [enscript](https://www.gnu.org/software/enscript)
 
 Install ghostscript:
 
@@ -78,7 +146,7 @@ cd enscript
 cd ..
 ```
 
-## [mlir](https://mlir.llvm.org/)
+### [mlir](https://mlir.llvm.org/)
 
 Install dependencies:
 
@@ -109,7 +177,7 @@ cmake -G Ninja ../llvm \
     && ninja
 ```
 
-## [ocaml+dune](https://dune.build/)
+### [ocaml+dune](https://dune.build/)
 
 First compile `ocaml`:
 
@@ -135,7 +203,7 @@ PREFIX="$CONDA_PREFIX" make install
 popd
 ```
 
-## [proot](https://github.com/proot-me/proot)
+### [proot](https://github.com/proot-me/proot)
 
 Install dependencies:
 
@@ -172,7 +240,7 @@ cp src/proot src/care "${CONDA_PREFIX}/bin"
 popd
 ```
 
-## [qemu](https://www.qemu.org/)
+### [qemu](https://www.qemu.org/)
 
 ```bash
 conda install -c conda-forge cmake git meson ninja pkgconfig python
