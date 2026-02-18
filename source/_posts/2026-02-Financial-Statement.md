@@ -20,6 +20,11 @@ date,name,amount
 2026-02-09,Payment to Chase card,-23.85
 2026-02-13,Cornell Universi DIR DEP PPD,1745.84
 2026-02-13,Payment to Chase card,-85.21
+2026-02-15,EBAY,-97.15
+2026-02-15,EBAY,-10.25
+2026-02-17,Payment to Chase card,-163.89
+2026-02-17,Payment to Chase card,-44.68
+2026-02-17,ONEPAY CASHREWRD SYF PAYMNT,-101.28
 ```
 
-Total: -244.67
+Total: -661.92
