@@ -25,6 +25,9 @@ date,name,amount
 2026-02-17,Payment to Chase card,-163.89
 2026-02-17,Payment to Chase card,-44.68
 2026-02-17,ONEPAY CASHREWRD SYF PAYMNT,-101.28
+2026-02-19,Zelle payment,27.00
+2026-02-20,OPENAI OPENAI.COM CA,-45.40
+2026-02-20,Payment to Chase card,-200.00
 ```
 
-Total: -661.92
+Total: -880.32
